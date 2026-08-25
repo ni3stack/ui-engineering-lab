@@ -1,0 +1,107 @@
+@import "../../styles/tokens/color.css";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: 
+    background-color 150ms ease
+    border 150ms ease
+    color 150ms ease;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:focus-visible {
+  border: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+
+.button--small {
+  min-height: 32px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.button--medium {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.button--large {
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.button--primary:active:not(:disabled) {
+  background: var(--color-primary-active);
+  border-color: var(--color-primary-active);
+}
+
+.button--secondary {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.button--secondary:hover:not(:disabled) {
+  background: var(--color-surface-hover);
+  border-color: var(--color-border-hover);
+}
+
+.button--secondary:active:not(:disabled) {
+  background: var(--color-surface-active);
+
+}
+
+.button--danger {
+  background: var(--color-danger);
+  color: var(--color-white);
+}
+
+.button--danger:hover:not(:disabled) {
+  background: var(--color-danger-hover);
+  border-color: var(--color-danger-hover);
+}
+
+.button--danger:active:not(:disabled) {
+  background: var(--color-danger-active);
+  border-color: var(--color-danger-active);
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--color-text);
+}
+
+.button--ghost:hover:not(:disabled) {
+  background: var(--color-surface-hover);
+}
+
+.button--ghost:active:not(:disabled) {
+  background: var(--color-surface-active);
+}
