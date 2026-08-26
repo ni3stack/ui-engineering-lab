@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./playground.css";
 import { ComponentNav } from "./navigation/ComponentNav";
 import { ButtonShowcase } from "./showcases/ButtonShowcase";
+import { InputShowcase } from "./showcases/InputShowcase";
 
-type ComponentName = "button";
+type ComponentName = "button" | "input";
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
 
           <main className="playground-content">
               { activeComponent === "button" && <ButtonShowcase />}
+              { activeComponent === "input" && <InputShowcase />}
           </main>
       </div>
     </div>

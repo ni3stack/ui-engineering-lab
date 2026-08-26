@@ -117,3 +117,10 @@ body {
   color: #6b7280;
   font-size: 14px;
 }
+
+.showcase-input-column {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  max-width: 500px;
+}
