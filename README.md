@@ -1,6 +1,15 @@
 # UI Engineering Lab
 
-A production-quality frontend engineering playground focused on:
+A production-oriented React + TypeScript UI component library built as a monorepo.
+
+The goal is to build reusable, accessible, and well-tested UI components that can
+eventually be consumed by other React applications and Git repositories.
+
+---
+
+## Goals
+
+This project is also an engineering lab for exploring:
 
 - Frontend Architecture
 - Component Architecture
@@ -12,53 +21,47 @@ A production-quality frontend engineering playground focused on:
 - JavaScript Internals
 - React Patterns
 - Performance
-
----
-
-## Current Status
-
-### UI Library
-
-Package: `@ui-lab/ui`
-
-#### Button
-
-- [x] React + TypeScript component
-- [x] Native button props
-- [x] `variant`
-- [x] `size`
-- [x] Custom `className`
-- [x] Class composition
-- [x] Jest + Testing Library
-- [x] jsdom
-- [x] CSS support in Jest
-- [x] Design tokens
-- [x] Hover / active states
-- [x] Focus-visible state
-- [x] Disabled state
-- [x] Loading behavior
-- [ ] Loading indicator
-- [ ] Loading accessibility
-- [ ] Playground
-- [ ] Documentation
-- [ ] Package build verification
+- Accessibility
+- Testing
+- Package Design
 
 ---
 
 ## Project Structure
 
 ```text
-packages/
-└── ui/
-    ├── src/
-    │   ├── components/
-    │   │   └── Button/
-    │   ├── styles/
-    │   │   └── tokens/
-    │   ├── styles.d.ts
-    │   └── index.ts
-    │
-    └── test/
-        └── styleMock.js
-
-playground/
+ui-engineering-lab/
+│
+├── packages/
+│   └── ui/
+│       ├── src/
+│       │   ├── components/
+│       │   │   ├── Button/
+│       │   │   └── Input/
+│       │   │
+│       │   ├── styles/
+│       │   │   └── tokens/
+│       │   │
+│       │   ├── styles.d.ts
+│       │   └── index.ts
+│       │
+│       ├── test/
+│       │   └── styleMock.js
+│       │
+│       ├── jest.config.js
+│       ├── jest.setup.js
+│       ├── tsconfig.json
+│       └── webpack.config.js
+│
+├── playground/
+│   ├── src/
+│   │   ├── navigation/
+│   │   └── showcases/
+│   │
+│   └── webpack.config.js
+│
+├── babel.config.js
+├── package.json
+├── tsconfig.json
+├── .gitignore
+└── README.md
