@@ -1,4 +1,4 @@
-type ComponentName = "button" | "input";
+type ComponentName = "button" | "input" | "select";
 
 interface ComponentNavProps  {
   activeComponent: string;
@@ -23,7 +23,7 @@ export function ComponentNav({
          >
           Button
         </button>
-          <button 
+        <button 
           className={
             activeComponent === "input"
               ? "nav-item nav-item--active"
@@ -32,6 +32,15 @@ export function ComponentNav({
           onClick={() => onSelect("input")}
          >
           Input
+        </button>
+        <button
+          className={ activeComponent === "select"
+            ? "nav-item nav-item--active"
+            : "nav-item"
+          }
+          onClick={() => onSelect("select")}
+        >
+          Select
         </button>
       </div>
     </aside>
