@@ -3,8 +3,9 @@ import "./playground.css";
 import { ComponentNav } from "./navigation/ComponentNav";
 import { ButtonShowcase } from "./showcases/ButtonShowcase";
 import { InputShowcase } from "./showcases/InputShowcase";
+import { SelectShowcase } from "./showcases/SelectShowcase";
 
-type ComponentName = "button" | "input";
+type ComponentName = "button" | "input" | "select";
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
           <main className="playground-content">
               { activeComponent === "button" && <ButtonShowcase />}
               { activeComponent === "input" && <InputShowcase />}
+              { activeComponent === "select" && <SelectShowcase />}
           </main>
       </div>
     </div>
