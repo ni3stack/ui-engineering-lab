@@ -4,8 +4,10 @@ import { ComponentNav } from "./navigation/ComponentNav";
 import { ButtonShowcase } from "./showcases/ButtonShowcase";
 import { InputShowcase } from "./showcases/InputShowcase";
 import { SelectShowcase } from "./showcases/SelectShowcase";
+import { CheckboxShowcase } from "./showcases/CheckboxShowcase";
+import { RadioShowcase } from "./showcases/RadioShowcase";
 
-type ComponentName = "button" | "input" | "select";
+type ComponentName = "button" | "input" | "select" | "radio" | "checkbox";
 
 export default function App() {
 
@@ -27,6 +29,8 @@ export default function App() {
               { activeComponent === "button" && <ButtonShowcase />}
               { activeComponent === "input" && <InputShowcase />}
               { activeComponent === "select" && <SelectShowcase />}
+              { activeComponent === "checkbox" && <CheckboxShowcase />}
+              { activeComponent === "radio" && <RadioShowcase />}
           </main>
       </div>
     </div>
