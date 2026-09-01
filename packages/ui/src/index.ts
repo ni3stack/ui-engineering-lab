@@ -26,3 +26,9 @@ export { Checkbox } from "./components/Checkbox/Checkbox";
 export type {
    CheckboxProps
 } from "./components/Checkbox/Checkbox";
+
+
+export { Textarea } from "./components/Textarea/Textarea";
+export type {
+   TextareaProps
+} from "./components/Textarea/Textarea";
