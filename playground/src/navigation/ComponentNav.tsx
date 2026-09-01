@@ -1,7 +1,8 @@
-type ComponentName = "button" | "input" | "select" | "radio" | "checkbox";
+import type { ComponentName } from "./componentConfig";
+import { componentGroups } from "./componentConfig";
 
-interface ComponentNavProps  {
-  activeComponent: string;
+export interface ComponentNavProps {
+  activeComponent: ComponentName;
   onSelect: (component: ComponentName) => void;
 }
 
@@ -12,55 +13,30 @@ export function ComponentNav({
   return (
     <aside className="component-nav">
       <h2>Components</h2>
-      <div className="nav-items">
-        <button 
-          className={
-            activeComponent === "button"
-              ? "nav-item nav-item--active"
-              : "nav-item"
-          }
-          onClick={() => onSelect("button")}
-         >
-          Button
-        </button>
-        <button 
-          className={
-            activeComponent === "input"
-              ? "nav-item nav-item--active"
-              : "nav-item"
-          }
-          onClick={() => onSelect("input")}
-         >
-          Input
-        </button>
-        <button
-          className={ activeComponent === "select"
-            ? "nav-item nav-item--active"
-            : "nav-item"
-          }
-          onClick={() => onSelect("select")}
-        >
-          Select
-        </button>
-        <button
-          className={ activeComponent === "radio"
-            ? "nav-item nav-item--active"
-            : "nav-item"
-          }
-          onClick={() => onSelect("radio")}
-        >
-          Radio
-        </button>
-        <button
-          className={ activeComponent === "checkbox"
-            ? "nav-item nav-item--active"
-            : "nav-item"
-          }
-          onClick={() => onSelect("checkbox")}
-        >
-          Checkbox
-        </button>
-      </div>
+      {
+        componentGroups.map(group => (
+          <div key={group.id} className="nav-group">
+            <h3 className="nav-group-title">{group.label}</h3>
+            <div className="nav-items">
+              {
+                group.components.map(component => (
+                  <button
+                    key={component.id}
+                    className={
+                      activeComponent === component.id
+                        ? "nav-item nav-item--active"
+                        : "nav-item"
+                    }
+                    onClick={() => onSelect(component.id)}
+                  >
+                    {component.label}
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+        ))
+      }
     </aside>
   )
 }
