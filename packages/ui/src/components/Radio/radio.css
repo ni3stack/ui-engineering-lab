@@ -1,0 +1,72 @@
+@import "../../styles/tokens/color.css";
+
+.radio-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.radio-label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  width: fit-content;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.radio {
+  width: 16px;
+  height: 16px;
+  margin: 1px 0 0;
+  flex-shrink: 0;
+
+  accent-color: var(--color-primary);
+  outline: none;
+  cursor: pointer;
+}
+
+.radio:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.radio:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.radio-disabled + .radio-label-text {
+  opacity: 0.5;
+  cursor: not-allowed;  
+}
+
+.radio-helper {
+  font-size: 13px;
+  color: var(--color-text);
+  opacity: 0.7;
+
+  margin-left: 24px;
+}
+
+.radio-error {
+  font-size: 13px;
+  color: var(--color-danger);
+  margin-left: 24px;
+}
+
+.radio[aria-invalid="true"]  {
+  accent-color: var(--color-danger);
+}
+
+.radio[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-danger);
+  outline: none;
+}
+
+

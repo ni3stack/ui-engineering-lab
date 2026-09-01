@@ -17,3 +17,12 @@ export type {
    SelectOption
 } from "./components/Select/Select";
 
+export { Radio } from "./components/Radio/Radio";
+export type {
+   RadioProps
+} from "./components/Radio/Radio";
+
+export { Checkbox } from "./components/Checkbox/Checkbox";
+export type {
+   CheckboxProps
+} from "./components/Checkbox/Checkbox";

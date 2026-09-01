@@ -1,7 +1,7 @@
 import { useId, type InputHTMLAttributes } from "react"
 import "./checkbox.css";
 
-export interface CheckBoxProps 
+export interface CheckboxProps 
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
     label?:string;
     helperText?:string;
@@ -15,7 +15,7 @@ export function Checkbox({
   error,
   className,
   ...inputProps
-}:CheckBoxProps) {
+}:CheckboxProps) {
   const generatedId = useId();
   const checkboxId = id || generatedId;
   const messageId = `${checkboxId}-message`;

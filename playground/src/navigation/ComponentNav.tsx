@@ -1,4 +1,4 @@
-type ComponentName = "button" | "input" | "select";
+type ComponentName = "button" | "input" | "select" | "radio" | "checkbox";
 
 interface ComponentNavProps  {
   activeComponent: string;
@@ -41,6 +41,24 @@ export function ComponentNav({
           onClick={() => onSelect("select")}
         >
           Select
+        </button>
+        <button
+          className={ activeComponent === "radio"
+            ? "nav-item nav-item--active"
+            : "nav-item"
+          }
+          onClick={() => onSelect("radio")}
+        >
+          Radio
+        </button>
+        <button
+          className={ activeComponent === "checkbox"
+            ? "nav-item nav-item--active"
+            : "nav-item"
+          }
+          onClick={() => onSelect("checkbox")}
+        >
+          Checkbox
         </button>
       </div>
     </aside>
