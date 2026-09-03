@@ -9,6 +9,7 @@ import { CheckboxShowcase } from "./showcases/CheckboxShowcase";
 import { RadioShowcase } from "./showcases/RadioShowcase";
 import { TextareaShowcase } from "./showcases/TextareaShowcase";
 import { SwitchShowcase } from "./showcases/SwitchShowcase";
+import { CardShowcase } from "./showcases/CardShowcase";
 
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
               { activeComponent === "radio" && <RadioShowcase />}
               { activeComponent === "textarea" && <TextareaShowcase />}
               { activeComponent === "switch" && <SwitchShowcase />}
+              { activeComponent === "card" && <CardShowcase />}
           </main>
       </div>
     </div>
