@@ -1,0 +1,161 @@
+@import "../../styles/tokens/color.css";
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 24px;
+  background: rgba(0 0 0 / 0.45);
+}
+
+.modal {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-height: calc(100vh - 48px);
+
+  font-family: inherit;
+
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  overflow: hidden;
+}
+
+.modal--small {
+  max-width: 400px;
+}
+
+.modal--medium {
+  max-width: 520px;
+}
+
+.modal--large {
+  max-width: 720px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width:32px;
+  height: 32px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 6px;
+
+  background: transparent;
+
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #f3f4f6;
+}
+
+.modal-close:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.modal-header {
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modal-title {
+  margin: 0;
+
+  padding-right: 40px;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.modal-description {
+  margin: 6px 0 0;
+
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-content {
+  flex: 1 1 auto;
+
+  min-height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+
+  padding: 0 24px 24px;
+
+  overflow-y: auto;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px 24px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 640) {
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 16px
+  }
+
+  .modal {
+    max-height: calc(100vh-32px);
+  }
+
+  .modal--small,
+  .modal--medium,
+  .modal--large {
+    max-width: none;
+  }
+
+   .modal-header {
+    padding: 20px 20px 16px;
+  }
+
+  .modal-content {
+    padding: 0 20px 20px;
+  }
+
+  .modal-footer {
+    padding: 16px 20px;
+  }
+}
