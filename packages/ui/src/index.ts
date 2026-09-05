@@ -44,3 +44,12 @@ export {
   CardContent,
   CardFooter,
 } from "./components/Card";
+
+export {
+   Modal,
+   ModalHeader,
+   ModalTitle,
+   ModalDescription,
+   ModalContent,
+   ModalFooter
+} from "./components/Modal";
