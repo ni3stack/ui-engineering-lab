@@ -9,6 +9,9 @@ export type ComponentName =
   | "card"
   | "modal"
   | "panel" 
+  | "banner"
+  | "alert"
+  | "toast"
   | "popover"
   | "dropdown"
   | "tooltip"
@@ -48,6 +51,15 @@ export const componentGroups: ComponentGroup[] = [
       { id: "card", label: "Card" },
       { id: "modal", label: "Modal" },
       { id: "panel", label: "Panel" }
+    ]
+  },
+  {
+    id: "feedback",
+    label: "Feedback",
+    components: [
+      { id: "banner", label: "Banner" },
+      { id: "alert", label: "Alert" },
+      { id: "toast", label: "Toast" }
     ]
   },
   {

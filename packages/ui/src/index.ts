@@ -65,3 +65,12 @@ export {
 
 
 export type { PanelPosition, PanelSize } from "./components/Panel/Panel";
+
+export {
+  Banner,
+} from "./components/Banner";
+
+export type {
+  BannerVariant,
+  BannerProps,
+} from "./components/Banner";

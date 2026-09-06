@@ -1,0 +1,99 @@
+@import "../../styles/tokens/color.css";
+
+.banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap:16px;
+
+  width:100%;
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+  border: 1px solid;
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.banner-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Variants */
+
+.banner--info {
+  background: var(--color-info-background);
+  border-color: var(--color-info-border);
+  color: var(--color-info-text);
+}
+
+.banner--success {
+  background: var(--color-success-background);
+  border-color: var(--color-success-border);
+  color: var(--color-success-text);
+}
+
+.banner--error {
+   background: var(--color-error-background);
+  border-color: var(--color-error-border);
+  color: var(--color-error-text);
+}
+
+.banner--warning {
+  background: var(--color-warning-background);
+  border-color: var(--color-warning-border);
+  color: var(--color-warning-text);
+}
+
+/* Close button */
+
+.banner-close {
+  flex: 0 0 auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  margin: -2px -4px -2px 0;
+  padding: 0;
+
+  border: 0;
+  border-radius: 6px;
+
+  background: transparent;
+  color: inherit;
+
+  font-size: 20;
+  line-height: 1;
+
+  cursor: pointer;
+
+ 
+  transition:
+    background-color 120ms ease,
+    opacity 120ms ease;
+}
+
+.banner-close:hover {
+  background: rgba(0 0 0 / 0.06);
+}
+
+.banner-close:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .banner {
+    gap: 12px;
+    padding: 12px 14px;
+  }
+}

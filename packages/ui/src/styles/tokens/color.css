@@ -18,4 +18,20 @@
   --color-surface: #ffffff;
   --color-surface-hover: #f9fafb;
   --color-surface-active: #f3f4f6;
+
+  --color-info-background: #eff6ff;
+  --color-info-border: #93c5fd;
+  --color-info-text: #1e40af;
+
+  --color-success-background: #f0fdf4;
+  --color-success-border: #86efac;
+  --color-success-text: #166534;
+
+  --color-warning-background: #fffbeb;
+  --color-warning-border: #fcd34d;
+  --color-warning-text: #92400e;
+
+  --color-error-background: #fef2f2;
+  --color-error-border: #fca5a5;
+  --color-error-text: #991b1b;
 }
