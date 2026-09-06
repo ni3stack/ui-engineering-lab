@@ -161,3 +161,35 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
+
+.showcase-controls {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.showcase-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.showcase-controls select {
+  min-width: 120px;
+}
+
+.showcase-controls input[type="checkbox"] {
+  width: auto;
+}
+
+.showcase-checkbox {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+  padding-bottom: 6px;
+}
