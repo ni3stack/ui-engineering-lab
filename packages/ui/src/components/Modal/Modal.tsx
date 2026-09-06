@@ -42,7 +42,6 @@ export function Modal({
 
     const modalRef = useRef<HTMLDivElement>(null);
     const previouslyFocusedElement = useRef<HTMLElement|null>(null);
-    const wasOpen = useRef(false);
     const previousBodyOverflow = useRef("");
 
 

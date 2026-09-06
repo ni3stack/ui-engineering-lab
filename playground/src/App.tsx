@@ -11,6 +11,7 @@ import { TextareaShowcase } from "./showcases/TextareaShowcase";
 import { SwitchShowcase } from "./showcases/SwitchShowcase";
 import { CardShowcase } from "./showcases/CardShowcase";
 import { ModalShowcase } from "./showcases/ModalShowcase";
+import { PanelShowcase } from "./showcases/PanelShowcase";
 
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
               { activeComponent === "switch" && <SwitchShowcase />}
               { activeComponent === "card" && <CardShowcase />}
               { activeComponent === "modal" && <ModalShowcase />}
+              { activeComponent === "panel" && <PanelShowcase />}
           </main>
       </div>
     </div>

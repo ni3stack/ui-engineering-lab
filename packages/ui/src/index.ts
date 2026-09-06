@@ -53,3 +53,15 @@ export {
    ModalContent,
    ModalFooter
 } from "./components/Modal";
+
+export {
+   Panel,
+   PanelHeader,
+   PanelTitle,
+   PanelDescription,
+   PanelContent,
+   PanelFooter
+} from "./components/Panel";
+
+
+export type { PanelPosition, PanelSize } from "./components/Panel/Panel";
