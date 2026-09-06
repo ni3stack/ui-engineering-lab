@@ -1,10 +1,12 @@
 {
   "name": "@ui-lab/ui",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
+  "description": "Reusable React UI components",
   "main":"./dist/index.js",
-  "types": "./dist/index.d.ts" , 
-  "description": "",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ], 
   "scripts": {
     "build": "webpack --config webpack.config.js",
      "test": "jest",
@@ -14,7 +16,12 @@
     "react":   "^19.0.0",
     "react-dom": "^19.0.0"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typescript",
+    "ui",
+    "components"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs"
