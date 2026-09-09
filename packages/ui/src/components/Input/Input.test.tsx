@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { Input } from "./Input";
+import userEvent from "@testing-library/user-event";
 
 describe("Input", () => {
   it("renders an input with its label", () => {
@@ -67,5 +68,90 @@ describe("Input", () => {
   it("preserve custom class name", () => {
     render(<Input label="Email" className="custom-class" />);
     expect(screen.getByLabelText("Email")).toHaveClass("input custom-class");
+  });
+
+  describe("Password visibility", () => {
+    it("does not show the password by default", () => {
+      render(
+        <Input type="password" aria-label="Password" />
+      );
+
+      expect(screen.queryByRole("button", { name: "Show password" }))
+        .not.toBeInTheDocument();
+    });
+
+    it("shows the toggle for password inputs", () => {
+      render(
+        <Input 
+          type="password" 
+          aria-label="Password"
+          showPasswordToggle
+        />
+      );
+
+      expect(screen.getByRole("button", { name: "Show password" }))
+        .toBeInTheDocument();
+    });
+
+    it("toggle password visibility", async () => {
+      const user = userEvent.setup();
+
+      render(
+        <Input
+          type="password"
+          showPasswordToggle
+          label="Password"
+        />
+      );
+
+      const input = screen.getByLabelText("Password");
+
+      expect(input).toHaveAttribute("type", "password");
+
+      await user.click(
+        screen.getByRole("button", { name: "Show password" })
+      );
+
+      expect(input).toHaveAttribute("type", "text");
+
+      expect(
+        screen.getByRole("button", { name: "Hide password" })
+      ).toBeInTheDocument();
+
+      await user.click(
+        screen.getByRole("button", { name: "Hide password" })
+      );
+
+      expect(input).toHaveAttribute("type", "password");
+    });
+
+    it("does not show the toggle for non-password inputs", () => {
+      render(
+        <Input
+          type="text"
+          showPasswordToggle
+          aria-label="Username"
+        />
+      );
+
+      expect(
+        screen.queryByRole("button", { name: "Show password" })
+      ).not.toBeInTheDocument();
+    });
+
+    it("disables the toggle when the input is disabled", () => {
+      render(
+        <Input
+          type="password"
+          showPasswordToggle
+          disabled
+          aria-label="Password"
+        />
+      );
+
+      expect(
+        screen.getByRole("button", { name: "Show password" })
+      ).toBeDisabled();
+    });
   });
 });
