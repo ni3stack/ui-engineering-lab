@@ -7,7 +7,7 @@ import {
   ModalDescription,
   ModalContent,
   ModalFooter,
-} from "@ui-lab/ui";
+} from "@ni3stack/ui";
 
 export function ModalShowcase() {
   const [open, setOpen] = useState(false);

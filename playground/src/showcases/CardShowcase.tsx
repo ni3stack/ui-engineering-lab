@@ -6,7 +6,7 @@ import {
   CardFooter, 
   CardHeader,
   CardTitle 
-} from "@ui-lab/ui";
+} from "@ni3stack/ui";
 
 import userImage from "../../assets/user.png";
 

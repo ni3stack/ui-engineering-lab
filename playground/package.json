@@ -6,7 +6,7 @@
       "start": "webpack serve --config webpack.config.js"
     },
     "dependencies": {
-      "@ui-lab/ui": "0.0.0",
+      "@ni3stack/ui": "0.1.0",
       "react": "^19.2.8",
       "react-dom": "^19.2.8"
     }   

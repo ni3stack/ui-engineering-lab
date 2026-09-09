@@ -1,4 +1,4 @@
-import { Select, type SelectOption } from "@ui-lab/ui";
+import { Select, type SelectOption } from "@ni3stack/ui";
 
 const countries:SelectOption[] = [
   { value: "in", label: "India" },
