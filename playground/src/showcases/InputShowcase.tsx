@@ -85,6 +85,73 @@ export function InputShowcase() {
           />
         </div>
       </section>
+      <section className="showcasesection">
+        <h2>Types</h2>
+        <p className="showcase-description">
+          Common Input types
+        </p>
+
+        <div className="showcase-input-column">
+          <Input
+            label="Text"
+            placeholder="Enter text"
+            type="text"
+          />
+
+          <Input
+            label="Password"
+            placeholder="Enter password"
+            type="password"
+          />
+
+          <Input
+            label="Password with visibility toggle"
+            placeholder="Enter password"
+            type="password"
+            showPasswordToggle
+          />
+
+          <Input
+            label="Email"
+            placeholder="Enter email"
+            type="email"
+          />
+
+          <Input
+            label="Number"
+            placeholder="Enter number"
+            type="number"
+          />
+
+          <Input
+            label="Search"
+            placeholder="Search..."
+            type="search"
+          />
+
+          <Input
+            label="Date"
+            type="date"
+          />
+
+          <Input
+            label="Time"
+            type="time"
+          />
+
+          <Input
+            label="URL"
+            placeholder="https://example.com"
+            type="url"
+          />
+
+          <Input
+            label="Tel"
+            placeholder="Enter phone number"
+            type="tel"
+          />
+        </div>
+      </section>
     </section>
   );
 }
