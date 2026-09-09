@@ -1,4 +1,4 @@
-import { Input } from "@ui-lab/ui";
+import { Input } from "@ni3stack/ui";
 
 export function InputShowcase() {
   return (

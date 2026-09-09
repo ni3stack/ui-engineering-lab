@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Banner, Button } from "@ui-lab/ui";
+import { Banner, Button } from "@ni3stack/ui";
 
 export function BannerShowcase() {
   const [showDismissible, setShowDismissible] = useState(true);

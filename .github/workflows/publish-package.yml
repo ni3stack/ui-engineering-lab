@@ -1,0 +1,37 @@
+name: Publish UI Package
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com
+      
+      - name: Install dependencies 
+        run: npm ci
+
+      - name: Run tests
+        run: npm run test --workspace=@ni3stack/ui
+      
+      - name: Build UI package
+        run: npm run build --workspace=@ni3stack/ui
+      
+      - name: Publish package
+        run: npm publish --workspace=@ni3stack/ui
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

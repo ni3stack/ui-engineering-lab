@@ -1,4 +1,4 @@
-import { Textarea } from "@ui-lab/ui";
+import { Textarea } from "@ni3stack/ui";
 
 export function TextareaShowcase() {
   return (

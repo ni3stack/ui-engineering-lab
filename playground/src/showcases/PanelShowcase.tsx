@@ -12,7 +12,7 @@ import {
   Textarea,
   type PanelPosition,
   type PanelSize,
-} from "@ui-lab/ui";
+} from "@ni3stack/ui";
 
 export function PanelShowcase() {
   const [open, setOpen] = useState(false);

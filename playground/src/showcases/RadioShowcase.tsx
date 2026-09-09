@@ -1,4 +1,4 @@
-import { Radio } from "@ui-lab/ui";
+import { Radio } from "@ni3stack/ui";
 
 export function RadioShowcase() {
   return (

@@ -1,4 +1,4 @@
-import { Switch } from "@ui-lab/ui";
+import { Switch } from "@ni3stack/ui";
 
 export function SwitchShowcase() {
   return (

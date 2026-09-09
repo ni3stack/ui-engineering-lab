@@ -1,12 +1,19 @@
 {
-  "name": "@ui-lab/ui",
-  "version": "0.2.0",
+  "name": "@ni3stack/ui",
+  "version": "0.1.0",
   "description": "Reusable React UI components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ni3stack/ui-engineering-lab.git"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "jest",

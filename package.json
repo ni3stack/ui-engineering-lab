@@ -7,8 +7,8 @@
     "playground"
   ],
   "scripts": {
-    "build": "npm run build --workspace=@ui-lab/ui",
-    "test": "npm run test --workspace=@ui-lab.ui"
+    "build": "npm run build --workspace=@ni3stack/ui",
+    "test": "npm run test --workspace=@ni3stack/ui"
   },
   "keywords": [],
   "author": "",

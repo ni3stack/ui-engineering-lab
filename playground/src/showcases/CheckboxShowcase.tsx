@@ -1,4 +1,4 @@
-import { Checkbox } from "@ui-lab/ui";
+import { Checkbox } from "@ni3stack/ui";
 
 export function CheckboxShowcase() {
   return (
