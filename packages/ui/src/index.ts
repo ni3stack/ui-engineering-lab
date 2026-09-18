@@ -77,3 +77,12 @@ export type {
 
 export { Alert } from "./components/Alert";
 export type { AlertVariant, AlertProps } from "./components/Alert";
+
+export { Popover } from "./components/Popover";
+
+export type {
+  PopoverProps,
+  PopoverTriggerProps,
+  PopoverContentProps,
+  PopoverPlacement,
+} from "./components/Popover";

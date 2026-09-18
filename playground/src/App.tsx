@@ -14,6 +14,7 @@ import { ModalShowcase } from "./showcases/ModalShowcase";
 import { PanelShowcase } from "./showcases/PanelShowcase";
 import { BannerShowcase } from "./showcases/BannerShowcase";
 import { AlertShowcase } from "./showcases/AlertShowcase";
+import { PopoverShowcase } from "./showcases/PopoverShowcase";
 
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
               { activeComponent === "panel" && <PanelShowcase />}
               { activeComponent === "banner" && <BannerShowcase />}
               { activeComponent === "alert" && <AlertShowcase />}
+              { activeComponent === "popover" && <PopoverShowcase />}
           </main>
       </div>
     </div>
