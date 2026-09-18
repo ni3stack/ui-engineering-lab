@@ -43,8 +43,8 @@ export function BannerShowcase() {
         {showDismissible ? (
           <Banner
             variant="success"
-            dismissible
-            onClose={() => setShowDismissible(false)}
+            dismissLabel="Dismiss profile notice"
+            onDismiss={() => setShowDismissible(false)}
           >
             This banner can be dismissed.
           </Banner>
