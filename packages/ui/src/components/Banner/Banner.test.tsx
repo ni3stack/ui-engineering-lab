@@ -62,76 +62,83 @@ describe("Banner", () => {
     expect(banner).toHaveAttribute("id", "banner-1");
   });
 
-  it("does not render close button by default", () => {
+  it("does not render a dismiss button by default", () => {
     render(
       <Banner>Banner without close button</Banner>
     );
     expect(screen.queryByRole("button", 
-      { name: "Close banner"})
+      { name: "Dismiss banner"})
     ).not.toBeInTheDocument();
   });
 
 
-  it("renders close button when dismissible", () => {
+  it("renders a dismiss button when onDismiss is provided", () => {
     render(
-      <Banner dismissible onClose={jest.fn()}>
+      <Banner onDismiss={jest.fn()}>
         Message
       </Banner>,
     );
 
     expect(
       screen.getByRole("button", {
-        name: "Close banner",
+        name: "Dismiss banner",
       }),
     ).toBeInTheDocument();
   });
 
-  it("calls onClose when close button is clicked", async () => {
+  it("calls onDismiss when the dismiss button is clicked", async () => {
     const user = userEvent.setup();
-    const onClose = jest.fn();
+    const onDismiss = jest.fn();
 
     render(
-      <Banner dismissible onClose={onClose}>
+      <Banner onDismiss={onDismiss}>
         Message
       </Banner>,
     );
 
     await user.click(
       screen.getByRole("button", {
-        name: "Close banner",
+        name: "Dismiss banner",
       }),
     );
 
-    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(onDismiss).toHaveBeenCalledTimes(1);
   });
 
-  it("does not render close button when dismissible is false", () => {
+  it("uses a custom dismiss label", () => {
     render(
-      <Banner dismissible={false} onClose={jest.fn()}>
+      <Banner dismissLabel="Dismiss notification" onDismiss={jest.fn()}>
+        Message
+      </Banner>,
+    );
+
+    expect(
+      screen.getByRole("button", {
+        name: "Dismiss notification",
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it("renders the dismiss icon", () => {
+    const { container } = render(
+      <Banner onDismiss={jest.fn()}>Message</Banner>,
+    );
+
+    expect(container.querySelector(".banner-dismiss svg")).toBeInTheDocument();
+  });
+
+  it("does not render an inert dismiss button when onDismiss is missing", () => {
+    render(
+      <Banner>
         Message
       </Banner>,
     );
 
     expect(
       screen.queryByRole("button", {
-        name: "Close banner",
-      }),
-    ).not.toBeInTheDocument();
-  });
-
-  it("does not render an inert close button when onClose is missing", () => {
-    render(
-      <Banner dismissible>
-        Message
-      </Banner>,
-    );
-
-    expect(
-      screen.queryByRole("button", {
-        name: "Close banner",
+        name: "Dismiss banner",
       }),
     ).not.toBeInTheDocument();
   });
 
 })
-

@@ -49,9 +49,9 @@
   color: var(--color-warning-text);
 }
 
-/* Close button */
+/* Dismiss button */
 
-.banner-close {
+.banner-dismiss {
   flex: 0 0 auto;
   display: inline-flex;
   justify-content: center;
@@ -69,7 +69,7 @@
   background: transparent;
   color: inherit;
 
-  font-size: 20;
+  font-size: 20px;
   line-height: 1;
 
   cursor: pointer;
@@ -80,11 +80,11 @@
     opacity 120ms ease;
 }
 
-.banner-close:hover {
+.banner-dismiss:hover {
   background: rgba(0 0 0 / 0.06);
 }
 
-.banner-close:focus-visible {
+.banner-dismiss:focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }

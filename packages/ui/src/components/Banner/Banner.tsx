@@ -1,4 +1,5 @@
-import type { HTMLAttributes, PropsWithChildren } from "react";
+import type { HTMLAttributes, Ref } from "react";
+import { X } from "lucide-react";
 
 import "./banner.css";
 
@@ -8,17 +9,21 @@ export type BannerVariant =
   | "warning"
   | "error";
 
-export interface BannerProps extends 
-  PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
-    variant?: BannerVariant;
-    dismissible?: boolean;
-    onClose?: () => void
-  }
+export interface BannerProps
+  extends HTMLAttributes<HTMLDivElement> {
+  variant?: BannerVariant;
+  onDismiss?: () => void;
+  /** Accessible label for the dismiss button. */
+  dismissLabel?: string;
+  /** Reference to the underlying div element. */
+  ref?: Ref<HTMLDivElement>;
+}
 
 export function Banner({
+  ref,
   variant = "info",
-  dismissible = false,
-  onClose,
+  dismissLabel = "Dismiss banner",
+  onDismiss,
   className,
   children,
   ...props
@@ -34,26 +39,24 @@ export function Banner({
 
   return (
     <div
+      {...props}
+      ref={ref}
       className={bannerClass}
       role="status"
-      {...props}
     >
       <div className="banner-content">
         {children}
       </div>
-      { dismissible && onClose &&
-        (
+      {onDismiss && (
           <button
             type="button"
-            className="banner-close"
-            aria-label="Close banner"
-            onClick={onClose}
-
+            className="banner-dismiss"
+            aria-label={dismissLabel}
+            onClick={onDismiss}
           >
-            X
+            <X aria-hidden="true" />
           </button>
-        )
-      }
+      )}
     </div>
   )
 
