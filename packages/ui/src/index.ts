@@ -74,3 +74,6 @@ export type {
   BannerVariant,
   BannerProps,
 } from "./components/Banner";
+
+export { Alert } from "./components/Alert";
+export type { AlertVariant, AlertProps } from "./components/Alert";

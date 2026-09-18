@@ -13,6 +13,7 @@ import { CardShowcase } from "./showcases/CardShowcase";
 import { ModalShowcase } from "./showcases/ModalShowcase";
 import { PanelShowcase } from "./showcases/PanelShowcase";
 import { BannerShowcase } from "./showcases/BannerShowcase";
+import { AlertShowcase } from "./showcases/AlertShowcase";
 
 
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
               { activeComponent === "modal" && <ModalShowcase />}
               { activeComponent === "panel" && <PanelShowcase />}
               { activeComponent === "banner" && <BannerShowcase />}
+              { activeComponent === "alert" && <AlertShowcase />}
           </main>
       </div>
     </div>
